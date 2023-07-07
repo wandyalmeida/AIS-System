@@ -101,13 +101,13 @@ ais_file = 'C:\Temp\AIS\AEPList.xls'
 ais_newFile = 'C:\Temp\AIS\AEPList.xlsx'
 print(ais_file)
 
-# Ler o arquivo HTML
+# Read the file HTML
 df = pd.read_html(ais_file)[0]
 
 # Delete the last row
 df = df.iloc[:-1]
 
-# Salvar o DataFrame em um arquivo XLSX
+# Save the df in a file XLSX
 df.to_excel(ais_newFile, index=False, header=False)
 
 # workbook = openpyxl.load_workbook(ais_file, read_only=True, keep_vba=False, data_only=True)
@@ -126,4 +126,5 @@ print('.', end='')
 time.sleep(1)
 print('.', end='')
 
+# When the process finish close the app.
 nav.quit()
